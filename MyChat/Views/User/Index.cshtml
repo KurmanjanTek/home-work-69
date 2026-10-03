@@ -1,0 +1,13 @@
+@model User
+@{
+    ViewData["Title"] = "Личный кабинет";
+}
+<h1>Личный кабинет</h1>
+
+<img src="@Model.Avatar" alt="Аватар" width="150" height="150"/>
+
+<p> Логин: @Model.UserName</p>
+<p> Email :@Model.Email</p>
+<p> Дата рождения: @Model.BirthOfDate</p>
+
+<a asp-controller="User" asp-action="Edit">Редактировать профиль</a>

@@ -1,0 +1,94 @@
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<User> UserManager
+
+@{
+    var currentUser = await UserManager.GetUserAsync(User);
+}
+
+<style>
+    #messages {
+        height: 400px;
+        overflow: auto;
+    }
+    .my-message {
+        text-align: right;
+    }
+
+    .other-message {
+        text-align: left;
+    }
+</style>
+
+<div id="messages"></div>
+<div>
+    <textarea id="messageText" maxlength="150"></textarea>
+    <button id="sendButton">Отправить</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+@section Scripts
+{
+<script>
+    function loadMessages() {
+        $.ajax({
+            url: "/Message/GetMessages",
+            type: "GET",
+            success: function (messages) {
+                $("#messages").empty();
+                $.each(messages, function (index, message) {
+                    var className = "";
+                    if (message.userId == @currentUser.Id) {
+                        className = "my-message";
+                    }
+                    else {
+                        className = "other-message";
+                    }
+                    $("#messages").append(
+                        "<div class='" + className + "'>" +
+                        "<img src='" + message.avatar + "' width='40' height='40'>" +
+                        "<a href='/User/Profile/" + message.userId + "'>" +
+                        message.userName +
+                        "</a> " +
+                        message.sentAt +
+                        "<p>" + message.text + "</p>" +
+                        "</div>"
+                    );
+                });
+            }
+        });
+    }
+
+
+    $("#sendButton").click(function () {
+        var text = $("#messageText").val();
+        if (text.trim() === "") {
+            return;
+        }
+
+        if (text.length > 150) {
+            alert("Сообщение не должно быть длиннее 150 символов");
+            return;
+        }   
+            $.ajax({
+            url: "/Message/Send",
+            type: "POST",
+            data: {
+                text: text
+            },
+            success: function (response) {
+                if (response.success) {
+                    $("#messageText").val("");
+                    loadMessages();
+                }
+            }
+        });
+
+    });
+    loadMessages();
+    setInterval(loadMessages, 5000);
+    
+</script>
+
+}

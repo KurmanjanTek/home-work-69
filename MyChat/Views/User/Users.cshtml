@@ -1,0 +1,31 @@
+@model List<User>
+
+<h2>Зарегистрированные пользователи</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Avatar</th>
+        <th>Логин</th>
+        <th>Email</th>
+        <th>Дата рождения</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td><img src="@user.Avatar" alt="@user.UserName" width="50" height="50"/></td>
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td>@user.BirthOfDate</td>
+            <td>
+                <a asp-controller="User" asp-action="BlockUser" asp-route-id="@user.Id">Блокировать</a>
+                <a asp-controller="User" asp-action="EditProfile" asp-route-id="@user.Id">Редактировать </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+
+    
+</table>
+

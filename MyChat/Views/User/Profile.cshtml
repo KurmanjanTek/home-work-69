@@ -1,0 +1,12 @@
+@model User
+
+<h2>Профиль пользователя</h2>
+
+<p>Имя: @Model.UserName</p>
+
+<img src="@Model.Avatar" width="100" height="100" />
+
+<p>
+    Пользователь отправил сообщений:
+    @ViewBag.MessageCount
+</p>

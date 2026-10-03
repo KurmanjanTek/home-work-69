@@ -1,0 +1,20 @@
+@model MyChat.ViewModels.EditProfileViewModel
+
+<h1> Редактирование профиля</h1>
+<form asp-controller="User" asp-action="EditProfile" method="post" enctype="multipart/form-data">
+    <label asp-for="UserName"></label>
+    <input asp-for="UserName" />
+    
+    <label asp-for="Email"></label>
+    <input asp-for="Email" />
+    
+    <label asp-for="BirthOfDate"></label>
+    <input asp-for="BirthOfDate" type="date" />
+    
+    <label asp-for="Avatar"></label>
+    <input asp-for="Avatar" type="file" accept=".jpg,.jpeg,.png,.jfif"/>
+    
+    <button type="submit">Сохранить</button>
+
+</form>
+
