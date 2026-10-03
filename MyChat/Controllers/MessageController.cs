@@ -23,7 +23,7 @@ public class MessageController : Controller
         Message message = new Message
         {
             Text = text,
-            SendAt = DateTime.Now,
+            SendAt = DateTime.UtcNow,
             UserId = user.Id
         };
 
