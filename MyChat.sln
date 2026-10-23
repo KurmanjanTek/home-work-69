@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyChat", "MyChat\MyChat.csproj", "{70FD3A77-CE59-48B7-9B4C-5C0926DB4107}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyChat.Web", "MyChat.Web\MyChat.Web.csproj", "{70FD3A77-CE59-48B7-9B4C-5C0926DB4107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyChat.BLL", "MyChat.BLL\MyChat.BLL.csproj", "{0605D3F8-D71D-4536-ACEC-338A4BB5533B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyChat.DAL", "MyChat.DAL\MyChat.DAL.csproj", "{72BDB2B5-558A-4B3C-8E8D-649FC2064268}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +16,13 @@ Global
 		{70FD3A77-CE59-48B7-9B4C-5C0926DB4107}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70FD3A77-CE59-48B7-9B4C-5C0926DB4107}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70FD3A77-CE59-48B7-9B4C-5C0926DB4107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0605D3F8-D71D-4536-ACEC-338A4BB5533B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0605D3F8-D71D-4536-ACEC-338A4BB5533B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0605D3F8-D71D-4536-ACEC-338A4BB5533B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0605D3F8-D71D-4536-ACEC-338A4BB5533B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BDB2B5-558A-4B3C-8E8D-649FC2064268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BDB2B5-558A-4B3C-8E8D-649FC2064268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BDB2B5-558A-4B3C-8E8D-649FC2064268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BDB2B5-558A-4B3C-8E8D-649FC2064268}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

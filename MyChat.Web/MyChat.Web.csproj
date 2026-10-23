@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MyChat.BLL\MyChat.BLL.csproj" />
+      <ProjectReference Include="..\MyChat.DAL\MyChat.DAL.csproj" />
+    </ItemGroup>
+
+</Project>

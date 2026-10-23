@@ -1,0 +1,56 @@
+@model MyChat.Web.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>Вход в приложение</h2>
+
+<form method="post" asp-controller="Account" asp-action="Login">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input type="hidden" value="@Model.ReturnUrl" asp-for="ReturnUrl">
+    <div>
+        <label asp-for="LoginOrEmail"></label><br />
+        <input asp-for="LoginOrEmail" />
+        <span asp-validation-for="LoginOrEmail"></span>
+    </div>
+
+    <div>
+        <label asp-for="Password" ></label> <br/>
+        <input asp-for="Password" type="password" id="password"/>
+        <span asp-validation-for="Password"></span>
+        <button type="button" onclick="togglePassword()"><i class="bi bi-eye"></i></button>
+    </div>
+
+    <div>
+        <label asp-for="RememberMe"></label><br />
+        <input asp-for="RememberMe" />
+    </div>
+
+    <div>
+        <input type="submit" value="Войти" />
+    </div>
+
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    
+    <script>{
+        function togglePassword() {
+            const input = document.getElementById("password");
+            const icon =event.currentTarget.querySelector("i");
+            
+            if (input.type === "password") {
+                input.type = "text";
+                btn.textContent = "bi bi-eye-slash";
+            } else {
+                input.type = "password";
+                btn.textContent = "bi bi-eye";
+            }
+        }
+    }
+</script>
+}
+   
+
