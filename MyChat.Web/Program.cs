@@ -29,7 +29,7 @@ public class Program()
             .AddEntityFrameworkStores<MyChatContext>();
         
         builder.Services.AddScoped<IMessageService, MessageService>();
-        builder.Services.AddScoped<IMessageRepository, IMessageRepository>();
+        builder.Services.AddScoped<IMessageRepository, MessageRepository>();
         builder.Services.AddScoped<IUserRepository, UserRepository>();
         builder.Services.AddScoped<IUserService, UserService>();
         builder.Services.AddScoped<IAccountService, AccountService>();
